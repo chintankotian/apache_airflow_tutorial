@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:13
+
     environment:
       - POSTGRES_USER=airflow
       - POSTGRES_PASSWORD=airflow
@@ -8,11 +9,35 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - ./postgres-db-volume/data:/var/lib/postgresql/data
+      - ./postgres-db-volume/airflow_init.sql:/docker-entrypoint-initdb.d/airflow_init.sql
+    networks:
+      - my_network
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
       retries: 5
+  
+  af:
+    container_name: airflow-webserver
+    image: apache/airflow:latest 
 
-  volumes:
-  postgres-db-volume:
+    ports:
+      - "8000:8080"
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_meta:airflow_pass@postgres:5432/airflow_db 
+    volumes:
+      - ./dags:/opt/airflow/dags
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - my_network
+    command: >
+      bash -c "airflow db migrate && airflow standalone"
+
+networks:
+  my_network:
+    driver: bridge
+
+        
