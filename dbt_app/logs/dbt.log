@@ -1,0 +1,40 @@
+[0m19:11:05.681338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8faf7c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff91c82f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ffbaa80>]}
+
+
+============================== 19:11:05.687087 | a780ffb9-b96b-4c7f-9d8a-bffec166af62 ==============================
+[0m19:11:05.687087 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:11:05.687586 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'empty': 'None', 'target_path': 'None', 'quiet': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'invocation_command': 'dbt init weather_etl --profile weather_etl', 'introspect': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'profiles_dir': '/root/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs', 'static_parser': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'write_json': 'True'}
+[0m19:11:05.713212 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.12/site-packages/dbt/include/starter_project
+[0m19:11:05.724003 [info ] [MainThread]: 
+Your new dbt project "weather_etl" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:11:05.725181 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.07585121, "process_in_blocks": "0", "process_kernel_time": 0.099297, "process_mem_max_rss": "104656", "process_out_blocks": "3979", "process_user_time": 0.909722}
+[0m19:11:05.725751 [debug] [MainThread]: Command `dbt init` succeeded at 19:11:05.725575 after 0.08 seconds
+[0m19:11:05.726172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8ffbaa80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8f5f9c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8f5faa20>]}
+[0m19:11:05.726476 [debug] [MainThread]: Flushing usage events
+[0m19:11:05.901320 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:12:44.620886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb46e1bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb5607080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb3e38dd0>]}
+
+
+============================== 19:12:44.627278 | 34eb4c8b-3866-4df0-9725-acdbca7edfe0 ==============================
+[0m19:12:44.627278 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:12:44.627733 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'warn_error': 'None', 'partial_parse': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'cache_selected_only': 'False', 'profiles_dir': '/root/.dbt', 'quiet': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt init weather_etl --profile weather_etl', 'introspect': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'log_cache_events': 'False', 'log_path': 'logs'}
+[0m19:12:44.653146 [info ] [MainThread]: A project called weather_etl already exists here.
+[0m19:12:44.654088 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.06597962, "process_in_blocks": "0", "process_kernel_time": 0.104189, "process_mem_max_rss": "104800", "process_out_blocks": "3970", "process_user_time": 0.947727}
+[0m19:12:44.654432 [debug] [MainThread]: Command `dbt init` succeeded at 19:12:44.654372 after 0.07 seconds
+[0m19:12:44.654668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb662af00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb5607080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffb379d580>]}
+[0m19:12:44.654919 [debug] [MainThread]: Flushing usage events
+[0m19:12:44.811311 [debug] [MainThread]: An error was encountered while trying to flush usage events

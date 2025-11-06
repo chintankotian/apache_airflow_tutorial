@@ -20,7 +20,9 @@ services:
   
   af:
     container_name: airflow-webserver
-    image: apache/airflow:latest 
+    build:
+      context: ./custom_images/airflow_dbt
+      dockerfile: Dockerfile
 
     ports:
       - "8000:8080"
@@ -28,13 +30,15 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_meta:airflow_pass@postgres:5432/airflow_db 
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./dbt_app:/app
     depends_on:
       postgres:
         condition: service_healthy
     networks:
       - my_network
     command: >
-      bash -c "airflow db migrate && airflow standalone"
+      bash -c "dbt init weather_etl --profile weather_etl && airflow db migrate && airflow standalone "
+      bash -c "airflow db migrate && airflow standalone "
 
 networks:
   my_network:

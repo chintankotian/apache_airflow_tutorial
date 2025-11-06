@@ -1,0 +1,13 @@
+# example profiles.yml file
+weather_etl:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: airfloe
+      password: airflow
+      port: 5432
+      dbname: weather_data
+      schema: public
+      threads: 4
